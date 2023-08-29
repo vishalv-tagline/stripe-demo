@@ -1,9 +1,14 @@
 <div>
-    <form>
-        <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
-          <ngx-stripe-payment [clientSecret]="clientSecret">
+    <!-- <form>
+      <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
+          elementsOptions:: {{ elementsOptions | json }}
+          <ngx-stripe-payment [appearance]="appearance">
           </ngx-stripe-payment>
         </ng-container>
         <button (click)="pay()">PAY</button>
-    </form>
+    </form> -->
+    <ngx-stripe-card [formGroup]="stripeTest" [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
+    <button type="submit" class="btn btn-md btn-primary" (click)="createToken()">
+      CREATE TOKEN
+    </button>
 </div>

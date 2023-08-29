@@ -7,7 +7,7 @@
             <img [src]="data?.image" class="card-img-top" alt="image">
             <div class="card-body" >
               <h5 class="card-title">Product name : {{data?.pro_name}}</h5>
-              <h6 class="card-text">{{data?.price | currency:'INR'}}</h6>
+              <h6 class="card-text">{{data?.price}}</h6>
               <p class="card-text">{{data?.desc}}</p>
               <a class="btn btn-outline-primary" (click)="makePayment(data.price)">Pay</a>
             </div>

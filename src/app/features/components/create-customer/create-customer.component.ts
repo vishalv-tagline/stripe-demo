@@ -56,6 +56,7 @@ export class CreateCustomerComponent {
         next:(res:any)=>{
           console.log('res :>> ', res);
           this.customer_Id = res.data.id;
+          localStorage.setItem('customer_ID',res.data.id);
           this.sweetAlertService.success(res.message);
           this.frmCustomer.reset();
         },

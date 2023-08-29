@@ -8,8 +8,8 @@ import { PaymentGatewayComponent } from './features/components/payment-gateway/p
 import { CreateCustomerComponent } from './features/components/create-customer/create-customer.component';
 import { NgxStripeComponent } from './features/components/ngx-stripe/ngx-stripe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxStripeModule} from 'ngx-stripe';
-import { NgxStripePaymentModule } from 'ngx-stripe-payment';
+import { NgxStripeModule } from 'ngx-stripe';
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +23,8 @@ import { NgxStripePaymentModule } from 'ngx-stripe-payment';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxStripeModule,
-    NgxStripePaymentModule,
+    NgxStripeModule.forRoot(environment.STRIPE_KEY),
   ],
-  providers: [],
   bootstrap: [AppComponent],
   schemas:[NO_ERRORS_SCHEMA]
 })
