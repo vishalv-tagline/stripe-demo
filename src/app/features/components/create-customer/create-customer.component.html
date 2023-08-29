@@ -1,0 +1,45 @@
+<div class="container-fluid mt-3">
+    <div class="card p-4">
+        <h2 class="h2">Cretae Customer</h2>
+        <hr>
+        <form class="row g-3" [formGroup]="frmCustomer" (ngSubmit)="onSubmit()">
+            <div class="col-lg-6">
+                <label class="form-lable p-2">Name</label>
+                <input type="text" formControlName="name" class="form-control form-control-lg" placeholder="Enter name">
+            </div>
+            <div class="col-lg-6">
+                <label class="form-lable p-2">Email address</label>
+                <input type="text" formControlName="email" class="form-control form-control-lg" placeholder="Enter email address">
+            </div>
+            <div class="col-lg-6">
+                <button type="submit" class="btn btn-lg btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="card p-4">
+        <h2 class="h2">Add card details</h2>
+        <hr>
+        <form class="row g-3" [formGroup]="frmAddCard" (ngSubmit)="onAddCard()">
+            <div class="col-lg-6">
+                <label class="form-lable p-2">Card name</label>
+                <input type="text" formControlName="card_Name" class="form-control form-control-lg" placeholder="Enter card holder name">
+            </div>
+            <div class="col-lg-6">
+                <label class="form-lable p-2">Card number</label>
+                <input type="text" formControlName="card_Number" class="form-control form-control-lg" placeholder="Enter card number">
+            </div>
+            <div class="col-lg-6">
+                <label class="form-lable">Select Expire darte</label>
+                <input type="month" formControlName="card_ExpMonth" class="form-control form-control-lg">
+            </div>
+            <div class="col-lg-6">
+                <label class="form-lable">Card cvv</label>
+                <input type="number" formControlName="card_CVC" class="form-control form-control-lg">
+            </div>
+            <div class="col-lg-6">
+                <button type="submit" class="btn btn-lg btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
