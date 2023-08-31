@@ -1,14 +1,36 @@
-<div>
-    <!-- <form>
-      <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
-          elementsOptions:: {{ elementsOptions | json }}
-          <ngx-stripe-payment [appearance]="appearance">
-          </ngx-stripe-payment>
-        </ng-container>
-        <button (click)="pay()">PAY</button>
-    </form> -->
-    <ngx-stripe-card [formGroup]="stripeTest" [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
-    <button type="submit" class="btn btn-md btn-primary" (click)="createToken()">
-      CREATE TOKEN
-    </button>
+<div class="container-fluid p-5">
+  <div class="border p-3">
+    <div class="bg-primary text-center text-light p-2 mb-3">
+      <h2 class="h2">Add card details</h2>
+    </div>
+    <div class="row g-3" [formGroup]="stripeTest">
+      <div class="col-lg-6">
+        <div class="form-group" appearance="fill">
+          <input class="form-control" placeholder="Holder Name" formControlName="name" />
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group" appearance="fill">
+          <input class="form-control" placeholder="Email address" type="email" formControlName="email" />
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group" appearance="fill">
+          <input class="form-control" placeholder="Enter address" formControlName="address" />
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group" appearance="fill">
+          <input class="form-control" placeholder="Enter ZIP Code" formControlName="zipcode" />
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group" appearance="fill">
+          <input class="form-control" placeholder="City" formControlName="city" />
+        </div>
+      </div>
+      <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card><hr>
+      <button class="btn btn-lg btn-primary w-25" (click)="createToken()">Pay</button>
+    </div>
+  </div>
 </div>

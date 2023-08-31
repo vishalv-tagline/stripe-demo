@@ -79,6 +79,10 @@ export class NgxStripeComponent {
   ngOnInit(): void {
     this.stripeTest = this.fb.group({
       name: ['', [Validators.required]],
+      email:['',Validators.required],
+      address: ['', [Validators.required]],
+      zipcode: ['', [Validators.required]],
+      city:['',Validators.required],
     });
   }
 
